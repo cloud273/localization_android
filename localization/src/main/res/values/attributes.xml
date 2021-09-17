@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="Localization">
+        <attr name="lText" format="string" />
+        <attr name="lHint" format="string" />
+        <attr name="lTitle" format="string" />
+    </declare-styleable>
+
+</resources>
