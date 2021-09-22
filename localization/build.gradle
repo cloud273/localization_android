@@ -38,3 +38,25 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.6'
 
 }
+
+ext {
+    PUBLISH_GROUP_ID = 'com.cloud273'
+    PUBLISH_VERSION = '1.0.0'
+    PUBLISH_ARTIFACT_ID = 'localization'
+    PUBLISH_DESCRIPTION = 'A library that support multi-language application.'
+    PUBLISH_URL = 'https://github.com/cloud273/localization_android'
+    PUBLISH_LICENSE_NAME = 'MIT License'
+    PUBLISH_LICENSE_URL =
+            'https://github.com/cloud273/localization_android/LICENSE'
+    PUBLISH_DEVELOPER_ID = 'Cloud273'
+    PUBLISH_DEVELOPER_NAME = 'DUNGNGUYEN'
+    PUBLISH_DEVELOPER_EMAIL = 'dungnguyen2703@live.com'
+    PUBLISH_SCM_CONNECTION =
+            'scm:git:github.com/cloud273/localization_android.git'
+    PUBLISH_SCM_DEVELOPER_CONNECTION =
+            'scm:git:ssh://github.com/cloud273/localization_android.git'
+    PUBLISH_SCM_URL =
+            'https://github.com//cloud273/localization_android'
+}
+
+apply from: "${rootProject.projectDir}/scripts/publish-module.gradle"
