@@ -3,7 +3,7 @@ package com.cloud273.localization
 import android.app.Application
 import androidx.lifecycle.LifecycleObserver
 
-class CLApp : Application(), LifecycleObserver {
+internal class CLApp : Application(), LifecycleObserver {
 
     companion object {
         internal lateinit var instance: CLApp

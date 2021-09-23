@@ -1,9 +1,9 @@
-# CLLocalization
+# Localization
 
 
 ## What's this?
 
-`CLLocalization` is a Localization library written in Kotlin.
+`Localization` is a library for multi-language application written in Kotlin.
 
 ## Requirements
 

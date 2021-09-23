@@ -175,7 +175,7 @@ class CLLocalization {
 
 }
 
-class LocaleChangedReceiver : BroadcastReceiver() {
+internal class LocaleChangedReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context?, intent: Intent) {
         if (intent.action!!.compareTo(Intent.ACTION_LOCALE_CHANGED) == 0) {
             CLLocalization.reloadPreferLanguageIfNeed()
