@@ -45,12 +45,13 @@ Content of file:
 
 - Setup main application and receiver in AndroidManifest.xml
 
-```
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.cloud273.localization.example">
+    <!--Setup application to your class: android:name=".MyApplication"-->
     <application
-        android:name=".MyApplication" // SETUP MAIN APPLICATION 
+        android:name=".MyApplication" 
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -66,8 +67,7 @@ Content of file:
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        
-        // SETUP RECEIVER 
+        <!--Setup receiver -->
         <receiver
             android:name="com.cloud273.localization.LocaleChangedReceiver"
             android:enabled="true"
@@ -81,9 +81,10 @@ Content of file:
 </manifest>
 
 ```
+
 - Initialize list of supported language inside your main application (MyApplication):
 
-```
+```kotlin
 class MyApplication : Application() {
 
     override fun onCreate() {
@@ -100,21 +101,21 @@ Note: Device language will be used
 
 - Change to target language:
 
-```
+```kotlin
 CLLocalization.setLanguage("en")
      
 ```
 
 - Change back to use device language:
 
-```
+```kotlin
 CLLocalization.setLanguage(null)
 
 ```
 
 - Monitor language changed for activity:
 
-```
+```kotlin
 override fun onDestroy() {
     super.onDestroy()
     stopMonitorLanguageChanged()
@@ -131,56 +132,56 @@ override fun onCreate(savedInstanceState: Bundle?) {
 
 - String
 
-```
-String localizedString = "text".localized
+```kotlin
+val localizedString = "text".localized
 
 ```
 
 - Activity:
 
-```
+```kotlin
 activity.lTitle = "title"
 
 ```
 
 - Fragment:
 
-```
+```kotlin
 fragment.lTitle = "title"
 
 ```
 
 - TextView:
 
-```
+```kotlin
 textView.lText = "label"
 
 ```
 
 - Button:
 
-```
+```kotlin
 button.lText = "button"
 
 ```
 
 - RadioButton:
 
-```
+```kotlin
 button.lText = "button"
 
 ```
 
 - CheckBox:
 
-```
+```kotlin
 checkBox.lText = "title"
 
 ```
 
 - EditText:
 
-```
+```kotlin
 editText.hint = "hint"
 
 ```
