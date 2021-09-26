@@ -11,11 +11,11 @@ import com.google.gson.reflect.TypeToken
 import java.lang.RuntimeException
 import android.content.Intent
 
-class CLLocalization {
+class CLLocalization(internal val application: Application) {
 
     companion object {
 
-        private var instance: CLLocalization? = null
+        internal var instance: CLLocalization? = null
 
         const val languageChangedNotification = "com.cloud273.localization.languageChangedNotification"
 
@@ -29,9 +29,9 @@ class CLLocalization {
                 return instance?.code ?: ""
             }
 
-        fun initialize(supportedLanguages: List<String>) {
+        fun initialize(application: Application, supportedLanguages: List<String>) {
             if (instance == null) {
-                instance = CLLocalization()
+                instance = CLLocalization(application)
                 instance!!.initialize(supportedLanguages)
             }
         }
@@ -62,9 +62,7 @@ class CLLocalization {
 
     }
 
-    private val application: Application = CLApp.instance
-
-    private val store: SharedPreferences = application.getSharedPreferences(BuildConfig.LIBRARY_PACKAGE_NAME + ".store", Context.MODE_PRIVATE)
+    private val store: SharedPreferences = application.getSharedPreferences("com.cloud273.localization.store", Context.MODE_PRIVATE)
 
     private val key = "code"
 
@@ -83,6 +81,7 @@ class CLLocalization {
         }
         codes = supportedLanguages
         setLanguage(store.getString(key, null))
+        println(BuildConfig.LIBRARY_PACKAGE_NAME );
     }
 
     private fun setLanguage(language: String?) {
@@ -175,7 +174,7 @@ class CLLocalization {
 
 }
 
-internal class LocaleChangedReceiver : BroadcastReceiver() {
+class LocaleChangedReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context?, intent: Intent) {
         if (intent.action!!.compareTo(Intent.ACTION_LOCALE_CHANGED) == 0) {
             CLLocalization.reloadPreferLanguageIfNeed()

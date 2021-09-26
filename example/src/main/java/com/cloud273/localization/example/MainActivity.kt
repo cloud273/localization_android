@@ -15,7 +15,6 @@ class MainActivity : AppCompatActivity() {
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        CLLocalization.initialize(listOf("en", "vi"))
         startMonitorLanguageChanged()
         setContentView(R.layout.activity_main)
         val navController = (supportFragmentManager.findFragmentById(R.id.fragmentContainer) as NavHostFragment).navController

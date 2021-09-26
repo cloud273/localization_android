@@ -1,7 +1,6 @@
 package com.cloud273.localization
 
 import android.app.Activity
-import android.content.Intent
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -72,7 +71,7 @@ var ImageView.lImage: String?
     get() = null
     set(value) {
         value?.also {
-            val drawableResourceId = this.resources.getIdentifier(localized(value), "drawable", CLApp.instance.packageName)
+            val drawableResourceId = this.resources.getIdentifier(localized(value), "drawable", CLLocalization.instance!!.application.packageName)
             this.setImageResource(drawableResourceId)
         }
 
