@@ -51,22 +51,7 @@ Content of file:
     package="com.cloud273.localization.example">
     <!--Setup application to your class: android:name=".MyApplication"-->
     <application
-        android:name=".MyApplication" 
-        android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
-        android:theme="@style/Theme.Example">
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        android:name=".MyApplication">
         <!--Setup receiver -->
         <receiver
             android:name="com.cloud273.localization.LocaleChangedReceiver"
