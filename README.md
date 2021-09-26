@@ -98,7 +98,7 @@ CLLocalization.setLanguage(null)
 
 ```
 
-- Monitor language changed for activity:
+- Monitor language change in activity:
 
 ```kotlin
 override fun onDestroy() {
