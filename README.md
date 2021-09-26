@@ -14,7 +14,7 @@
 #### MavenCentral
 
 ```
-implementation 'com.cloud273:localization:1.0.2'
+implementation 'com.cloud273:cllocalization:1.0.0'
 ```
 ## Usage
 
