@@ -21,16 +21,11 @@ class CLTextInputEditText: com.google.android.material.textfield.TextInputEditTe
         context.theme.obtainStyledAttributes(
             attrs,
             R.styleable.Localization,0,0).apply {
-            val localizedText: String?
             val localizedHint: String?
             try {
-                localizedText = getString(R.styleable.Localization_lText)
                 localizedHint = getString(R.styleable.Localization_lHint)
             } finally {
                 recycle()
-            }
-            if (localizedText != null) {
-                lText = localizedText
             }
             if (localizedHint != null) {
                 lHint = localizedHint
